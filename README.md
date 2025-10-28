@@ -29,12 +29,65 @@
 
 ---
 
-## 📌 Featured Project: BrainReboot
+### 🧠 BrainReboot  
+An interactive quiz app built with **React (Web)** and **Android Studio (Mobile)**.  
+- 🎮 Engaging quiz experience with smooth navigation  
+- 🎨 Dark theme with **electric blue & purple accents**  
+- 🚀 Future goal: integrate **AI‑driven question recommendations**  
 
-**BrainReboot** is an interactive quiz app built with **React (Web)** and **Android Studio (Mobile)**.  
-- 🎮 Engaging quiz experience with clean UI and smooth navigation  
-- 🎨 Consistent dark theme with **electric blue & purple accents**  
-- 🔗 Built with scalability in mind — modular project structure  
-- 🚀 Future goal: integrate **AI‑driven question recommendations** and **data‑driven performance insights**  
+---
+
+### 👞 ShoeSure – Platform for Local Cobblers & Shoe Sellers  
+A digital marketplace empowering **local cobblers and shoe sellers** to showcase products and services.  
+- 🛒 Connects artisans with customers  
+- 📱 Mobile‑friendly platform for accessibility  
+- 🌍 Promotes local businesses with modern tech  
+
+---
+
+### 👕 WearZ – Smart Clothes Recommendation Assistance  
+An **AI‑powered recommendation system** for fashion and clothing.  
+- 🤖 Suggests outfits based on user preferences & trends  
+- 📊 Uses ML models for personalization  
+- 🎨 Enhances shopping with smart styling assistance  
+
+---
+
+### 🎓 InternSathi – Internship Allocation Engine  
+Built for the **Prime Minister Internship Scheme**, this engine automates fair allocation of internships.  
+- ⚙️ Matches students with opportunities based on skills  
+- 📈 Optimizes allocation using data‑driven logic  
+- 🤝 Ensures transparency and efficiency  
+
+---
+
+### 🔗 InterSetu – Internship Recommendation Engine  
+A companion project to InternSathi, focused on **personalized internship recommendations**.  
+- 🧠 Uses ML algorithms to suggest best‑fit opportunities  
+- 📊 Analyzes student profiles and preferences  
+- 🚀 Bridges the gap between students and organizations  
+
+---
+
+### 🤝 BroNme – Team Formation & Teammate Suggestion App  
+A **collaborative platform** for hackathons and competitions.  
+- 🔍 Skill‑based matching for participants  
+- 💡 Project idea board for brainstorming  
+- 👥 Seamless team creation & joining flow  
+
+--
+## 📊 GitHub Stats
+
+![Sajid's GitHub stats](https://github-readme-stats.vercel.app/api?username=sajidtecho&show_icons=true&theme=radical)  
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=sajidtecho&layout=compact&theme=radical)
+
+---
+
+## 🌐 Connect with Me
+
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/sajidtecho)  
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sajid-ahmad-er/)  
+
+---
 
 ✨ *“Transforming ideas into intelligent, data‑driven solutions that inspire progress.”*
