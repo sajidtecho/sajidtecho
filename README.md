@@ -37,19 +37,4 @@
 - 🔗 Built with scalability in mind — modular project structure  
 - 🚀 Future goal: integrate **AI‑driven question recommendations** and **data‑driven performance insights**  
 
-👉 [Check out the BrainReboot repo](https://github.com/YOUR_USERNAME/BrainReboot)  
-
----
-
-## 📊 GitHub Stats
-
-![Sajid's GitHub stats](https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=radical)  
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact&theme=radical)
-
----
-
- 
-
----
-
 ✨ *“Transforming ideas into intelligent, data‑driven solutions that inspire progress.”*
