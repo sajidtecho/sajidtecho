@@ -2,7 +2,7 @@
 ### 🚀 Developer | AI & ML Enthusiast | Data Science Explorer
 
 💡 Passionate about building **futuristic tech solutions** that combine **AI, Machine Learning, and Data Science** with clean, scalable app development.  
-⚡ Skilled in **Android Studio** and **React**,**Web Development**,** GoogleFirebase Studio**, I enjoy creating interactive apps that merge sleek UI/UX with intelligent systems.  
+⚡ Skilled in **Android Studio** and **React**,**Web Development**, and ** Google Firebase Studio**, I enjoy creating interactive apps that merge sleek UI/UX with intelligent systems.  
 🎯 Currently working on **Building Recommendation System**, a cross‑platform quiz app designed to make learning engaging and fun.  
 🌱 Exploring **predictive models, neural networks, and data visualization** to bring smarter insights into real‑world applications.  
 
