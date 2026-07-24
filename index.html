@@ -524,9 +524,13 @@
             <span class="terminal-title">sajid@interactive:~</span>
           </div>
           <div class="terminal-body">
-            <span class="term-prompt">sajid@profile:~$</span> <span class="term-input">cat developer.json</span>
+            <div class="term-line">
+              <span class="term-prompt">sajid@profile:~$</span> <span class="term-input">cat developer.json</span>
+            </div>
             <div class="term-output" id="typed-json"></div>
-            <span class="term-prompt">sajid@profile:~$</span> <span class="term-input" id="command-input"></span><span class="term-cursor"></span>
+            <div class="term-line" id="active-prompt-line">
+              <span class="term-prompt">sajid@profile:~$</span> <span class="term-input" id="command-input"></span><span class="term-cursor"></span>
+            </div>
           </div>
         </div>
       </section>
@@ -855,18 +859,20 @@
           // Press enter, show output, move to next command
           setTimeout(() => {
             const outputText = getCommandOutput(cmdStr);
-            const parent = commandTarget.parentElement;
+            const parent = document.querySelector('.terminal-body');
+            const referenceNode = document.getElementById('active-prompt-line');
             
             // Append static command
             const cmdLine = document.createElement('div');
+            cmdLine.className = 'term-line';
             cmdLine.innerHTML = `<span class="term-prompt">sajid@profile:~$</span> <span class="term-input">${cmdStr}</span>`;
-            parent.insertBefore(cmdLine, commandTarget.parentElement.querySelector('#command-input').parentElement);
+            parent.insertBefore(cmdLine, referenceNode);
             
             // Append output
             const outLine = document.createElement('div');
             outLine.className = 'term-output';
             outLine.innerHTML = outputText;
-            parent.insertBefore(outLine, commandTarget.parentElement.querySelector('#command-input').parentElement);
+            parent.insertBefore(outLine, referenceNode);
             
             commandTarget.innerHTML = "";
             promptIdx = (promptIdx + 1) % promptInputs.length;
