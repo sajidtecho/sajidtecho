@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 220" width="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#120526"/>
+      <stop offset="100%" stop-color="#05020f"/>
+    </linearGradient>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9d4edd"/>
+      <stop offset="100%" stop-color="#7000ff"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&amp;family=Share+Tech+Mono&amp;display=swap');
+    
+    .title {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      fill: #ffffff;
+    }
+    .desc {
+      font-family: 'Outfit', sans-serif;
+      font-size: 11.5px;
+      fill: #a99cb5;
+    }
+    .bullet {
+      font-family: 'Outfit', sans-serif;
+      font-size: 11.5px;
+      fill: #ece3f5;
+    }
+    .tech {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 10px;
+      fill: #9d4edd;
+    }
+    
+    @keyframes borderGlow {
+      0%, 100% { stroke-opacity: 0.3; }
+      50% { stroke-opacity: 0.9; }
+    }
+    @keyframes pulseNode {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 1; }
+    }
+    @keyframes lineScan {
+      0% { stroke-dashoffset: 100; }
+      100% { stroke-dashoffset: 0; }
+    }
+    
+    .glow-border {
+      animation: borderGlow 4s ease-in-out infinite;
+    }
+    .pulse-element {
+      animation: pulseNode 3s ease-in-out infinite;
+    }
+    .scanning-line {
+      stroke-dasharray: 10, 15;
+      animation: lineScan 4s linear infinite;
+    }
+  </style>
+
+  <!-- Background -->
+  <rect width="780" height="220" rx="8" fill="url(#bgGrad)" stroke="#220e3d" stroke-width="1.5"/>
+
+  <!-- Tech Grid/Lines -->
+  <line x1="730" y1="0" x2="730" y2="220" stroke="#18072e" stroke-width="0.8" stroke-dasharray="4,4"/>
+  <line x1="0" y1="180" x2="780" y2="180" stroke="#18072e" stroke-width="0.8"/>
+  <circle cx="730" cy="180" r="3" fill="#9d4edd" class="pulse-element"/>
+  <line class="scanning-line" x1="15" y1="15" x2="765" y2="15" stroke="url(#purpleGrad)" stroke-width="1" opacity="0.4"/>
+
+  <!-- Animated Border Outline Overlay -->
+  <rect class="glow-border" width="776" height="216" x="2" y="2" rx="6" fill="none" stroke="url(#purpleGrad)" stroke-width="1.5" filter="url(#glow)"/>
+
+  <!-- Icon -->
+  <g transform="translate(20, 28)">
+    <rect width="32" height="32" rx="6" fill="#080212" stroke="#9d4edd" stroke-width="1" filter="url(#glow)"/>
+    <!-- Eye SVG Icon -->
+    <path d="M6,16 C10,10 22,10 26,16 C22,22 10,22 6,16 Z" fill="none" stroke="#9d4edd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="16" cy="16" r="3" fill="none" stroke="#9d4edd" stroke-width="1.5"/>
+    <circle cx="16" cy="16" r="1.2" fill="#9d4edd"/>
+  </g>
+
+  <!-- Title & Description -->
+  <text x="64" y="44" class="title">VisionPact</text>
+  <text x="64" y="60" class="tech" opacity="0.85">&gt; AI COMPUTER VISION SYSTEM</text>
+  
+  <text x="20" y="85" class="desc">A high-performance computer vision scanning application optimized for visual data analysis,</text>
+  <text x="20" y="101" class="desc">real-time camera feed object detection, and visual pattern recognition models.</text>
+
+  <!-- Bullets -->
+  <g transform="translate(20, 118)">
+    <polygon points="0,4 6,7 0,10" fill="#9d4edd"/>
+    <text x="14" y="8" class="bullet">Frame-by-frame deep learning classification and bounding box localization</text>
+  </g>
+  <g transform="translate(20, 136)">
+    <polygon points="0,4 6,7 0,10" fill="#9d4edd"/>
+    <text x="14" y="8" class="bullet">Optimized quality inspection pipeline automation for digital verification workflows</text>
+  </g>
+
+  <!-- Tech Badges Footer -->
+  <g transform="translate(20, 197)">
+    <rect width="45" height="15" rx="3" fill="#120526" stroke="#9d4edd" stroke-width="0.5"/>
+    <text x="22.5" y="11" font-family="'Share Tech Mono', monospace" font-size="8" fill="#ffffff" text-anchor="middle">Python</text>
+  </g>
+  <g transform="translate(71, 197)">
+    <rect width="60" height="15" rx="3" fill="#120526" stroke="#9d4edd" stroke-width="0.5"/>
+    <text x="30" y="11" font-family="'Share Tech Mono', monospace" font-size="8" fill="#ffffff" text-anchor="middle">TensorFlow</text>
+  </g>
+  <g transform="translate(137, 197)">
+    <rect width="50" height="15" rx="3" fill="#120526" stroke="#9d4edd" stroke-width="0.5"/>
+    <text x="25" y="11" font-family="'Share Tech Mono', monospace" font-size="8" fill="#ffffff" text-anchor="middle">PyTorch</text>
+  </g>
+  <g transform="translate(193, 197)">
+    <rect width="50" height="15" rx="3" fill="#120526" stroke="#9d4edd" stroke-width="0.5"/>
+    <text x="25" y="11" font-family="'Share Tech Mono', monospace" font-size="8" fill="#ffffff" text-anchor="middle">OpenCV</text>
+  </g>
+
+  <!-- Interactive status node -->
+  <text x="760" y="200" font-family="'Share Tech Mono', monospace" font-size="9" fill="#9d4edd" text-anchor="end">[ACTIVE]</text>
+</svg>

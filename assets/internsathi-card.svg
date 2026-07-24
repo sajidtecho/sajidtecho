@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 220" width="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#041221"/>
+      <stop offset="100%" stop-color="#02080f"/>
+    </linearGradient>
+    <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe"/>
+      <stop offset="100%" stop-color="#2a82e6"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&amp;family=Share+Tech+Mono&amp;display=swap');
+    
+    .title {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      fill: #ffffff;
+    }
+    .desc {
+      font-family: 'Outfit', sans-serif;
+      font-size: 11.5px;
+      fill: #8aa1b5;
+    }
+    .bullet {
+      font-family: 'Outfit', sans-serif;
+      font-size: 11.5px;
+      fill: #dce5ed;
+    }
+    .tech {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 10px;
+      fill: #00f2fe;
+    }
+    
+    @keyframes borderGlow {
+      0%, 100% { stroke-opacity: 0.3; }
+      50% { stroke-opacity: 0.9; }
+    }
+    @keyframes pulseNode {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 1; }
+    }
+    @keyframes lineScan {
+      0% { stroke-dashoffset: 100; }
+      100% { stroke-dashoffset: 0; }
+    }
+    
+    .glow-border {
+      animation: borderGlow 4s ease-in-out infinite;
+    }
+    .pulse-element {
+      animation: pulseNode 3s ease-in-out infinite;
+    }
+    .scanning-line {
+      stroke-dasharray: 10, 15;
+      animation: lineScan 4s linear infinite;
+    }
+  </style>
+
+  <!-- Background -->
+  <rect width="380" height="220" rx="8" fill="url(#bgGrad)" stroke="#0b243b" stroke-width="1.5"/>
+
+  <!-- Tech Grid/Lines -->
+  <line x1="330" y1="0" x2="330" y2="220" stroke="#061b2e" stroke-width="0.8" stroke-dasharray="4,4"/>
+  <line x1="0" y1="180" x2="380" y2="180" stroke="#061b2e" stroke-width="0.8"/>
+  <circle cx="330" cy="180" r="3" fill="#00f2fe" class="pulse-element"/>
+  <line class="scanning-line" x1="15" y1="15" x2="365" y2="15" stroke="url(#tealGrad)" stroke-width="1" opacity="0.4"/>
+
+  <!-- Animated Border Outline Overlay -->
+  <rect class="glow-border" width="376" height="216" x="2" y="2" rx="6" fill="none" stroke="url(#tealGrad)" stroke-width="1.5" filter="url(#glow)"/>
+
+  <!-- Icon -->
+  <g transform="translate(20, 28)">
+    <rect width="32" height="32" rx="6" fill="#020912" stroke="#00f2fe" stroke-width="1" filter="url(#glow)"/>
+    <!-- Graduation Cap SVG Icon -->
+    <path d="M16,8 L6,13 L16,18 L26,13 Z M23,14.5 L23,20 L16,23 L9,20 L9,14.5" fill="none" stroke="#00f2fe" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Title & Description -->
+  <text x="64" y="44" class="title">InternSathi</text>
+  <text x="64" y="60" class="tech" opacity="0.85">&gt; INTERNSHIP ALLOCATION MATCHING</text>
+  
+  <text x="20" y="85" class="desc">A recommendation engine matching student credentials with</text>
+  <text x="20" y="101" class="desc">internship vacancies for the Prime Minister Internship Scheme.</text>
+
+  <!-- Bullets -->
+  <g transform="translate(20, 118)">
+    <polygon points="0,4 6,7 0,10" fill="#00f2fe"/>
+    <text x="14" y="8" class="bullet">Skill-based demographical recommendation logic</text>
+  </g>
+  <g transform="translate(20, 136)">
+    <polygon points="0,4 6,7 0,10" fill="#00f2fe"/>
+    <text x="14" y="8" class="bullet">Fair opportunity allocation and optimization workflows</text>
+  </g>
+
+  <!-- Tech Badges Footer -->
+  <g transform="translate(20, 197)">
+    <rect width="45" height="15" rx="3" fill="#041221" stroke="#00f2fe" stroke-width="0.5"/>
+    <text x="22.5" y="11" font-family="'Share Tech Mono', monospace" font-size="8" fill="#ffffff" text-anchor="middle">Python</text>
+  </g>
+  <g transform="translate(71, 197)">
+    <rect width="65" height="15" rx="3" fill="#041221" stroke="#00f2fe" stroke-width="0.5"/>
+    <text x="32.5" y="11" font-family="'Share Tech Mono', monospace" font-size="8" fill="#ffffff" text-anchor="middle">Data Models</text>
+  </g>
+  <g transform="translate(142, 197)">
+    <rect width="50" height="15" rx="3" fill="#041221" stroke="#00f2fe" stroke-width="0.5"/>
+    <text x="25" y="11" font-family="'Share Tech Mono', monospace" font-size="8" fill="#ffffff" text-anchor="middle">SciKit</text>
+  </g>
+
+  <!-- Interactive status node -->
+  <text x="360" y="200" font-family="'Share Tech Mono', monospace" font-size="9" fill="#00f2fe" text-anchor="end">[ACTIVE]</text>
+</svg>

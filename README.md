@@ -74,69 +74,25 @@
 
 Here are the key projects I've built, exploring both client interface elegance and machine learning pipelines:
 
-<table width="100%">
-  <tr>
-    <td width="50%" valign="top">
-      <h3>🚗 Drivix &amp; Drivix-App</h3>
-      <p>Smart parking ecosystem designed to eliminate urban parking anxiety and time-loss.</p>
-      <ul>
-        <li>Real-time space availability visualization and spot reservation tracking.</li>
-        <li>Custom mobile dashboard and navigation integration for driver accessibility.</li>
-      </ul>
-      <p>
-        <img src="https://img.shields.io/badge/Stack-React%20%7C%20Android%20%7C%20Firebase-7000ff?style=flat-square" alt="Tech Stack">
-      </p>
-    </td>
-    <td width="50%" valign="top">
-      <h3>🌱 LifeHerba</h3>
-      <p>A digital health platform designed to digitize holistic AYUSH doctor consults and wellness management.</p>
-      <ul>
-        <li>Virtual consultation booking and prescription lifecycle management.</li>
-        <li>Online store catalog for direct access to natural herbal medicines.</li>
-      </ul>
-      <p>
-        <img src="https://img.shields.io/badge/Stack-Mobile%20Client%20%7C%20Database%20Sync-4facfe?style=flat-square" alt="Tech Stack">
-      </p>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>🤖 Helpme.ai</h3>
-      <p>An AI-powered resume intelligence system that reviews, scores, and optimizes candidate CVs.</p>
-      <ul>
-        <li>Analyzes resumes to match industry keyword indicators and role requirements.</li>
-        <li>Dynamically suggests writing enhancements for candidate profiles.</li>
-      </ul>
-      <p>
-        <img src="https://img.shields.io/badge/Stack-Python%20%7C%20AI%20API%20%7C%20NLP-f355da?style=flat-square" alt="Tech Stack">
-      </p>
-    </td>
-    <td width="50%" valign="top">
-      <h3>🎓 InternSathi</h3>
-      <p>Smart internship recommendation and allocation engine for the Prime Minister Internship Scheme.</p>
-      <ul>
-        <li>Automates matching of student credentials with corporate requirements.</li>
-        <li>Optimizes placement matching parameters using data-driven scoring.</li>
-      </ul>
-      <p>
-        <img src="https://img.shields.io/badge/Stack-ML%20Engine%20%7C%20Data%20Matching-00f2fe?style=flat-square" alt="Tech Stack">
-      </p>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="2" valign="top">
-      <h3>👁️ VisionPact</h3>
-      <p>An AI-driven computer vision application optimized for object detection and visual scanning pipelines.</p>
-      <ul>
-        <li>Uses deep learning model processing to analyze real-time video frames and images.</li>
-        <li>Automates quality inspections and biometric scan verifications with high accuracy.</li>
-      </ul>
-      <p>
-        <img src="https://img.shields.io/badge/Stack-Python%20%7C%20TensorFlow%20%7C%20PyTorch-7000ff?style=flat-square" alt="Tech Stack">
-      </p>
-    </td>
-  </tr>
-</table>
+<p align="center">
+  <a href="https://github.com/sajidtecho/Drivix" target="_blank">
+    <img src="assets/drivix-card.svg" width="49%" alt="Drivix App">
+  </a>
+  <a href="https://portfolio-kappa-beryl-49.vercel.app/" target="_blank">
+    <img src="assets/lifeherba-card.svg" width="49%" alt="LifeHerba">
+  </a>
+</p>
+<p align="center">
+  <a href="https://github.com/sajidtecho/Helpme.ai" target="_blank">
+    <img src="assets/helpmeai-card.svg" width="49%" alt="Helpme.ai">
+  </a>
+  <a href="https://github.com/sajidtecho/InternSathi--Smart-internship-recommendation-Engine-Prime-Minister-Internship-Scheme-" target="_blank">
+    <img src="assets/internsathi-card.svg" width="49%" alt="InternSathi">
+  </a>
+</p>
+<p align="center">
+  <img src="assets/visionpact-card.svg" width="99%" alt="VisionPact">
+</p>
 
 ---
 
