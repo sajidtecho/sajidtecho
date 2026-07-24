@@ -1,12 +1,12 @@
 <p align="center">
-  <a href="https://sajidtecho.github.io/sajidtecho/">
+  <a href="https://portfolio-kappa-beryl-49.vercel.app/">
     <img src="assets/hero-banner.svg" alt="Sajid's Cybernetic Tech Banner" width="100%">
   </a>
 </p>
 
 <p align="center">
   <a href="https://github.com/sajidtecho"><img src="https://img.shields.io/github/followers/sajidtecho?label=Followers&style=social" alt="Followers"></a>
-  <a href="https://sajidtecho.github.io/sajidtecho/"><img src="https://img.shields.io/badge/Interactive--Portfolio-Live-00f2fe?style=flat&logo=google-chrome&logoColor=white" alt="Live Portfolio"></a>
+  <a href="https://portfolio-kappa-beryl-49.vercel.app/"><img src="https://img.shields.io/badge/Interactive--Portfolio-Live-00f2fe?style=flat&logo=google-chrome&logoColor=white" alt="Live Portfolio"></a>
 </p>
 
 ---
