@@ -96,8 +96,8 @@ Here are the key projects I've built, exploring both client interface elegance a
 ## 📊 Developer Metrics & Stats
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=sajidtecho&show_icons=true&title_color=00f2fe&icon_color=f355da&text_color=cbd5e1&bg_color=0c0a24&hide_border=true" alt="Sajid's GitHub stats" width="48%">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=sajidtecho&layout=compact&title_color=00f2fe&icon_color=f355da&text_color=cbd5e1&bg_color=0c0a24&hide_border=true" alt="Top Languages" width="48%">
+  <img src="https://github-stats-extended.vercel.app/api?username=sajidtecho&show_icons=true&title_color=00f2fe&icon_color=f355da&text_color=cbd5e1&bg_color=0c0a24&hide_border=true" alt="Sajid's GitHub stats" width="48%">
+  <img src="https://github-stats-extended.vercel.app/api/top-langs/?username=sajidtecho&layout=compact&title_color=00f2fe&icon_color=f355da&text_color=cbd5e1&bg_color=0c0a24&hide_border=true" alt="Top Languages" width="48%">
 </p>
 
 ---
