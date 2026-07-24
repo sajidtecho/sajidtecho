@@ -77,46 +77,46 @@ Here are the key projects I've built, exploring both client interface elegance a
 <table width="100%">
   <tr>
     <td width="50%" valign="top">
-      <h3>🎮 BrainReboot</h3>
-      <p>Interactive quiz application built using <b>React (Web)</b> and <b>Android Studio (Mobile)</b>.</p>
+      <h3>🚗 Drivix &amp; Drivix-App</h3>
+      <p>Smart parking ecosystem designed to eliminate urban parking anxiety and time-loss.</p>
       <ul>
-        <li>Engaging experience with neon blue &amp; purple cyberpunk theme accents.</li>
-        <li>Future plan: integrate AI‑driven dynamic question recommendation algorithms.</li>
+        <li>Real-time space availability visualization and spot reservation tracking.</li>
+        <li>Custom mobile dashboard and navigation integration for driver accessibility.</li>
       </ul>
       <p>
         <img src="https://img.shields.io/badge/Stack-React%20%7C%20Android%20%7C%20Firebase-7000ff?style=flat-square" alt="Tech Stack">
       </p>
     </td>
     <td width="50%" valign="top">
-      <h3>👞 ShoeSure</h3>
-      <p>Digital marketplace designed to empower <b>local cobblers and shoe sellers</b>.</p>
+      <h3>🌱 LifeHerba</h3>
+      <p>A digital health platform designed to digitize holistic AYUSH doctor consults and wellness management.</p>
       <ul>
-        <li>Connects traditional craft artisans with digital buyers.</li>
-        <li>Mobile‑friendly layouts optimized for highly accessible merchant workflows.</li>
+        <li>Virtual consultation booking and prescription lifecycle management.</li>
+        <li>Online store catalog for direct access to natural herbal medicines.</li>
       </ul>
       <p>
-        <img src="https://img.shields.io/badge/Stack-Web%20Client%20%7C%20Database-4facfe?style=flat-square" alt="Tech Stack">
+        <img src="https://img.shields.io/badge/Stack-Mobile%20Client%20%7C%20Database%20Sync-4facfe?style=flat-square" alt="Tech Stack">
       </p>
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <h3>👕 WearZ</h3>
-      <p>An <b>AI‑powered smart clothing recommendation</b> helper for customized styling.</p>
+      <h3>🤖 Helpme.ai</h3>
+      <p>An AI-powered resume intelligence system that reviews, scores, and optimizes candidate CVs.</p>
       <ul>
-        <li>Suggests outfits based on user weather profiles and current trends.</li>
-        <li>Uses Scikit-Learn machine learning classification models.</li>
+        <li>Analyzes resumes to match industry keyword indicators and role requirements.</li>
+        <li>Dynamically suggests writing enhancements for candidate profiles.</li>
       </ul>
       <p>
-        <img src="https://img.shields.io/badge/Stack-Python%20%7C%20ML%20%7C%20Pandas-f355da?style=flat-square" alt="Tech Stack">
+        <img src="https://img.shields.io/badge/Stack-Python%20%7C%20AI%20API%20%7C%20NLP-f355da?style=flat-square" alt="Tech Stack">
       </p>
     </td>
     <td width="50%" valign="top">
-      <h3>🎓 InternSathi &amp; InterSetu</h3>
-      <p>Internship matching allocation engines engineered for the PM Internship Scheme.</p>
+      <h3>🎓 InternSathi</h3>
+      <p>Smart internship recommendation and allocation engine for the Prime Minister Internship Scheme.</p>
       <ul>
-        <li><b>InternSathi:</b> Automates student placement based on skill levels.</li>
-        <li><b>InterSetu:</b> Companion ML-powered engine optimizing student matches.</li>
+        <li>Automates matching of student credentials with corporate requirements.</li>
+        <li>Optimizes placement matching parameters using data-driven scoring.</li>
       </ul>
       <p>
         <img src="https://img.shields.io/badge/Stack-ML%20Engine%20%7C%20Data%20Matching-00f2fe?style=flat-square" alt="Tech Stack">
@@ -125,14 +125,14 @@ Here are the key projects I've built, exploring both client interface elegance a
   </tr>
   <tr>
     <td colspan="2" valign="top">
-      <h3>🤝 BroNme</h3>
-      <p>A collaborative team formation platform designed for fast-paced hackathons and technology contests.</p>
+      <h3>👁️ VisionPact</h3>
+      <p>An AI-driven computer vision application optimized for object detection and visual scanning pipelines.</p>
       <ul>
-        <li>Filters and matches teammates dynamically based on skill profiles.</li>
-        <li>Includes a real-time project idea collaborative board.</li>
+        <li>Uses deep learning model processing to analyze real-time video frames and images.</li>
+        <li>Automates quality inspections and biometric scan verifications with high accuracy.</li>
       </ul>
       <p>
-        <img src="https://img.shields.io/badge/Stack-Web%20App%20%7C%20Team%20Matching%20Logic-7000ff?style=flat-square" alt="Tech Stack">
+        <img src="https://img.shields.io/badge/Stack-Python%20%7C%20TensorFlow%20%7C%20PyTorch-7000ff?style=flat-square" alt="Tech Stack">
       </p>
     </td>
   </tr>
