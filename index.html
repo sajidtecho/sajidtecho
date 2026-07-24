@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sajid | AI, ML & Full-Stack Developer</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Sajid's Portfolio - AI & ML Enthusiast, Data Science Explorer, and Full-Stack App Developer. Building futuristic tech solutions.">
+  <meta name="keywords" content="Sajid, Portfolio, Developer, AI, ML, Data Science, React, Android, Kotlin, Python">
+  <meta name="author" content="Sajid">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome for Social Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --bg-color: #03010c;
+      --card-bg: rgba(12, 10, 31, 0.45);
+      --card-border: rgba(0, 242, 254, 0.15);
+      --card-border-hover: rgba(243, 85, 218, 0.4);
+      --text-main: #f3f0ff;
+      --text-muted: #9e9cb6;
+      --accent-cyan: #00f2fe;
+      --accent-purple: #f355da;
+      --accent-blue: #4facfe;
+      --neon-glow-cyan: 0 0 15px rgba(0, 242, 254, 0.6);
+      --neon-glow-purple: 0 0 15px rgba(243, 85, 218, 0.6);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body, html {
+      width: 100%;
+      height: 100%;
+      overflow-x: hidden;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      font-family: 'Outfit', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    /* Three.js Background Canvas */
+    #canvas-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* Main Container Grid Layout */
+    .app-container {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 420px 1fr;
+    }
+
+    /* Left Sidebar: Sticky profile dashboard */
+    .sidebar {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      background: rgba(4, 2, 12, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-right: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow-y: auto;
+    }
+
+    .profile-card {
+      margin-top: 20px;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0, 242, 254, 0.08);
+      border: 1px solid rgba(0, 242, 254, 0.3);
+      padding: 6px 12px;
+      border-radius: 50px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--accent-cyan);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 25px;
+      box-shadow: 0 0 10px rgba(0, 242, 254, 0.1);
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--accent-cyan);
+      border-radius: 50%;
+      box-shadow: var(--neon-glow-cyan);
+      animation: pulse-dot 2s infinite;
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+
+    .profile-name {
+      font-size: 2.8rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #ffffff 30%, var(--accent-blue) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
+
+    .profile-title {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 1.1rem;
+      color: var(--accent-cyan);
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+    }
+
+    .profile-bio {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    /* Tech Stack Grid in Sidebar */
+    .tech-pill-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 30px;
+    }
+
+    .tech-pill {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.3s ease;
+    }
+
+    .tech-pill:hover {
+      background: rgba(0, 242, 254, 0.05);
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 10px rgba(0, 242, 254, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .tech-pill i {
+      font-size: 0.85rem;
+    }
+
+    /* Social Sidebar Footer */
+    .sidebar-footer {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+    }
+
+    .social-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--text-main);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.2rem;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .social-btn:hover {
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+      border-color: transparent;
+      color: #fff;
+      transform: translateY(-4px);
+      box-shadow: 0 5px 15px rgba(112, 0, 255, 0.3);
+    }
+
+    /* Right Main Content */
+    .main-content {
+      padding: 60px 80px;
+      max-width: 1000px;
+      width: 100%;
+    }
+
+    section {
+      margin-bottom: 80px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 40px;
+    }
+
+    .section-line {
+      height: 1px;
+      flex-grow: 1;
+      background: linear-gradient(90deg, var(--accent-purple), transparent);
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title i {
+      color: var(--accent-purple);
+      text-shadow: var(--neon-glow-purple);
+    }
+
+    /* Projects Grid Card styling */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .project-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 30px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 250px;
+    }
+
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--card-border-hover);
+      box-shadow: 0 10px 30px rgba(112, 0, 255, 0.15);
+    }
+
+    .project-card:hover::before {
+      opacity: 1;
+    }
+
+    .project-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 15px;
+    }
+
+    .project-icon {
+      font-size: 1.8rem;
+      color: var(--accent-cyan);
+    }
+
+    .project-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    .project-link:hover {
+      color: var(--accent-cyan);
+    }
+
+    .project-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .project-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .project-tag {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--accent-purple);
+      background: rgba(243, 85, 218, 0.08);
+      padding: 4px 8px;
+      border-radius: 4px;
+      border: 1px solid rgba(243, 85, 218, 0.15);
+    }
+
+    /* Interactive Terminal widget */
+    .terminal-window {
+      background: rgba(2, 1, 8, 0.85);
+      border: 1px solid rgba(112, 0, 255, 0.2);
+      border-radius: 8px;
+      overflow: hidden;
+      font-family: 'Share Tech Mono', monospace;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    }
+
+    .terminal-bar {
+      background: rgba(255, 255, 255, 0.03);
+      padding: 10px 15px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .terminal-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .dot-red { background: #ff5f56; }
+    .dot-yellow { background: #ffbd2e; }
+    .dot-green { background: #27c93f; }
+
+    .terminal-title {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-left: auto;
+      margin-right: auto;
+      transform: translateX(-15px);
+    }
+
+    .terminal-body {
+      padding: 20px;
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: #cbd5e1;
+    }
+
+    .term-prompt {
+      color: var(--accent-cyan);
+    }
+
+    .term-input {
+      color: #fff;
+    }
+
+    .term-output {
+      color: var(--text-muted);
+      margin-bottom: 15px;
+    }
+
+    .term-cursor {
+      display: inline-block;
+      width: 8px;
+      height: 15px;
+      background: var(--accent-cyan);
+      animation: blink 1s step-end infinite;
+      vertical-align: middle;
+      margin-left: 4px;
+    }
+
+    @keyframes blink {
+      from, to { background-color: transparent }
+      50% { background-color: var(--accent-cyan); }
+    }
+
+    /* Footer styles */
+    .site-footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 40px 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      z-index: 2;
+      position: relative;
+    }
+
+    .site-footer a {
+      color: var(--accent-cyan);
+      text-decoration: none;
+    }
+
+    /* Responsiveness */
+    @media (max-width: 900px) {
+      .app-container {
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        position: relative;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 30px;
+      }
+      .main-content {
+        padding: 40px 20px;
+      }
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+      .site-footer {
+        padding: 30px 20px;
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Three.js Canvas Container -->
+  <div id="canvas-container"></div>
+
+  <div class="app-container">
+    
+    <!-- Sidebar profile dashboard -->
+    <aside class="sidebar">
+      <div class="profile-card">
+        <div class="status-badge">
+          <span class="status-dot"></span>
+          <span>Exploring new tech</span>
+        </div>
+        <h1 class="profile-name">Sajid Ahmad</h1>
+        <p class="profile-title">&lt; AI &amp; ML | App Developer /&gt;</p>
+        <p class="profile-bio">
+          Passionate about building futuristic technology solutions. I combine Artificial Intelligence, Machine Learning, and Data Science with sleek, modern cross-platform application architectures.
+        </p>
+
+        <div class="tech-pill-container">
+          <div class="tech-pill"><i class="fab fa-python" style="color:#3776ab"></i> Python</div>
+          <div class="tech-pill"><i class="fas fa-brain" style="color:#ff6f00"></i> TensorFlow</div>
+          <div class="tech-pill"><i class="fas fa-chart-line" style="color:#f7931e"></i> Scikit-Learn</div>
+          <div class="tech-pill"><i class="fas fa-table" style="color:#150458"></i> Pandas</div>
+          <div class="tech-pill"><i class="fab fa-react" style="color:#61dafb"></i> React</div>
+          <div class="tech-pill"><i class="fab fa-android" style="color:#3ddc84"></i> Android</div>
+          <div class="tech-pill"><i class="code" style="color:#7f52ff">&lt;/&gt;</i> Kotlin</div>
+          <div class="tech-pill"><i class="fab fa-node-js" style="color:#339933"></i> Node.js</div>
+        </div>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="social-links">
+          <a href="https://github.com/sajidtecho" target="_blank" class="social-btn" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/sajid-ahmad-er/" target="_blank" class="social-btn" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      
+      <!-- Interactive Terminal Section -->
+      <section id="terminal">
+        <div class="terminal-window">
+          <div class="terminal-bar">
+            <span class="terminal-dot dot-red"></span>
+            <span class="terminal-dot dot-yellow"></span>
+            <span class="terminal-dot dot-green"></span>
+            <span class="terminal-title">sajid@interactive:~</span>
+          </div>
+          <div class="terminal-body">
+            <span class="term-prompt">sajid@profile:~$</span> <span class="term-input">cat developer.json</span>
+            <div class="term-output" id="typed-json"></div>
+            <span class="term-prompt">sajid@profile:~$</span> <span class="term-input" id="command-input"></span><span class="term-cursor"></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects">
+        <div class="section-header">
+          <h2 class="section-title"><i class="fas fa-terminal"></i> Core Projects</h2>
+          <span class="section-line"></span>
+        </div>
+
+        <div class="projects-grid">
+          
+          <div class="project-card">
+            <div class="project-meta">
+              <div class="project-icon"><i class="fas fa-gamepad"></i></div>
+              <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+            </div>
+            <div>
+              <h3 class="project-name">BrainReboot</h3>
+              <p class="project-desc">An interactive quiz application built using React (Web) and Android Studio (Mobile) with sleek electric blue &amp; purple themes.</p>
+            </div>
+            <div class="project-tags">
+              <span class="project-tag">React</span>
+              <span class="project-tag">Android Studio</span>
+              <span class="project-tag">UI/UX</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-meta">
+              <div class="project-icon"><i class="fas fa-store"></i></div>
+              <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+            </div>
+            <div>
+              <h3 class="project-name">ShoeSure</h3>
+              <p class="project-desc">A digital marketplace platform empowering local cobblers and shoe sellers to showcase, market, and sell custom craftsmanship.</p>
+            </div>
+            <div class="project-tags">
+              <span class="project-tag">Marketplace</span>
+              <span class="project-tag">Mobile Web</span>
+              <span class="project-tag">Accessibility</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-meta">
+              <div class="project-icon"><i class="fas fa-tshirt"></i></div>
+              <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+            </div>
+            <div>
+              <h3 class="project-name">WearZ</h3>
+              <p class="project-desc">An AI-powered smart clothing recommendation assistant that suggests personalized outfits using advanced ML models.</p>
+            </div>
+            <div class="project-tags">
+              <span class="project-tag">AI/ML</span>
+              <span class="project-tag">Recommendation</span>
+              <span class="project-tag">Python</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-meta">
+              <div class="project-icon"><i class="fas fa-graduation-cap"></i></div>
+              <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+            </div>
+            <div>
+              <h3 class="project-name">InternSathi &amp; InterSetu</h3>
+              <p class="project-desc">Automated internship allocation and recommendation system built for PM Scheme, matching student profiles with skill requirements.</p>
+            </div>
+            <div class="project-tags">
+              <span class="project-tag">Data Engine</span>
+              <span class="project-tag">Matching logic</span>
+              <span class="project-tag">ML models</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Connect Section -->
+      <section id="connect">
+        <div class="section-header">
+          <h2 class="section-title"><i class="fas fa-network-wired"></i> Digital Network</h2>
+          <span class="section-line"></span>
+        </div>
+        <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 30px;">
+          I'm always open to talking about machine learning applications, new web stacks, or collaborative open-source projects. Reach out via my socials or explore my repository graph!
+        </p>
+      </section>
+
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div>&copy; 2026 Sajid Ahmad. All rights reserved.</div>
+    <div>Built with <span style="color: var(--accent-purple)">♥</span> &amp; <a href="https://threejs.org/" target="_blank">Three.js</a></div>
+  </footer>
+
+  <!-- Three.js Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Interactive ThreeJS Background Script -->
+  <script>
+    // 3D Particles and Connections Network
+    const container = document.getElementById('canvas-container');
+    
+    // Scene setup
+    const scene = new THREE.Scene();
+    scene.fog = new THREE.FogExp2(0x03010c, 0.0015);
+
+    // Camera setup
+    const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 1000);
+    camera.position.z = 400;
+
+    // Renderer setup
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setClearColor(scene.fog.color, 1);
+    container.appendChild(renderer.domElement);
+
+    // Create custom particle texture
+    function createCircleTexture(color, size) {
+      const matCanvas = document.createElement('canvas');
+      matCanvas.width = size;
+      matCanvas.height = size;
+      const matContext = matCanvas.getContext('2d');
+      const texture = new THREE.Texture(matCanvas);
+      
+      const center = size / 2;
+      const gradient = matContext.createRadialGradient(center, center, 0, center, center, center);
+      gradient.addColorStop(0, color);
+      gradient.addColorStop(0.3, color);
+      gradient.addColorStop(1, 'rgba(0,0,0,0)');
+      
+      matContext.fillStyle = gradient;
+      matContext.fillRect(0, 0, size, size);
+      
+      texture.needsUpdate = true;
+      return texture;
+    }
+
+    // Nodes (Particles)
+    const particleCount = 120;
+    const positions = new Float32Array(particleCount * 3);
+    const velocities = [];
+    const geometry = new THREE.BufferGeometry();
+
+    const areaWidth = 900;
+    const areaHeight = 700;
+    const areaDepth = 600;
+
+    for (let i = 0; i < particleCount; i++) {
+      // Coordinate generation within bounded volume
+      const x = (Math.random() - 0.5) * areaWidth;
+      const y = (Math.random() - 0.5) * areaHeight;
+      const z = (Math.random() - 0.5) * areaDepth;
+      
+      positions[i * 3] = x;
+      positions[i * 3 + 1] = y;
+      positions[i * 3 + 2] = z;
+
+      velocities.push({
+        x: (Math.random() - 0.5) * 0.4,
+        y: (Math.random() - 0.5) * 0.4,
+        z: (Math.random() - 0.5) * 0.2
+      });
+    }
+
+    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+
+    // Particle material
+    const particleMaterial = new THREE.PointsMaterial({
+      size: 5,
+      map: createCircleTexture('#00f2fe', 32),
+      blending: THREE.AdditiveBlending,
+      depthWrite: false,
+      transparent: true,
+      opacity: 0.8
+    });
+
+    const particles = new THREE.Points(geometry, particleMaterial);
+    scene.add(particles);
+
+    // Particle Connections (Lines)
+    const lineMaterial = new THREE.LineBasicMaterial({
+      color: 0x7000ff,
+      transparent: true,
+      opacity: 0.15,
+      blending: THREE.AdditiveBlending
+    });
+
+    let lineGeometry = new THREE.BufferGeometry();
+    let linePositions = new Float32Array(particleCount * particleCount * 6);
+    lineGeometry.setAttribute('position', new THREE.BufferAttribute(linePositions, 3));
+    const connectionLines = new THREE.LineSegments(lineGeometry, lineMaterial);
+    scene.add(connectionLines);
+
+    // Mouse Tracking for Interaction
+    let mouse = { x: 0, y: 0, targetX: 0, targetY: 0 };
+    window.addEventListener('mousemove', (e) => {
+      mouse.targetX = (e.clientX - window.innerWidth / 2) * 0.5;
+      mouse.targetY = (e.clientY - window.innerHeight / 2) * 0.5;
+    });
+
+    // Window Resize Handler
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+
+    // Animation Loop
+    const clock = new THREE.Clock();
+    
+    function animate() {
+      requestAnimationFrame(animate);
+
+      const delta = clock.getDelta();
+      const pos = particles.geometry.attributes.position.array;
+      
+      // Interpolate mouse movements smoothly
+      mouse.x += (mouse.targetX - mouse.x) * 0.05;
+      mouse.y += (mouse.targetY - mouse.y) * 0.05;
+
+      // Subtle scene rotation based on mouse
+      scene.rotation.y = mouse.x * 0.0015;
+      scene.rotation.x = -mouse.y * 0.0015;
+
+      // Update node positions
+      let lineIndex = 0;
+      let connectedPairs = 0;
+      const maxDistance = 150;
+
+      for (let i = 0; i < particleCount; i++) {
+        // Move particle
+        pos[i * 3] += velocities[i].x;
+        pos[i * 3 + 1] += velocities[i].y;
+        pos[i * 3 + 2] += velocities[i].z;
+
+        // Boundary bounce check
+        if (Math.abs(pos[i * 3]) > areaWidth / 2) velocities[i].x *= -1;
+        if (Math.abs(pos[i * 3 + 1]) > areaHeight / 2) velocities[i].y *= -1;
+        if (Math.abs(pos[i * 3 + 2]) > areaDepth / 2) velocities[i].z *= -1;
+
+        // Build proximity lines (neural-network look)
+        for (let j = i + 1; j < particleCount; j++) {
+          const dx = pos[i * 3] - pos[j * 3];
+          const dy = pos[i * 3 + 1] - pos[j * 3 + 1];
+          const dz = pos[i * 3 + 2] - pos[j * 3 + 2];
+          const dist = Math.sqrt(dx*dx + dy*dy + dz*dz);
+
+          if (dist < maxDistance) {
+            linePositions[lineIndex++] = pos[i * 3];
+            linePositions[lineIndex++] = pos[i * 3 + 1];
+            linePositions[lineIndex++] = pos[i * 3 + 2];
+            
+            linePositions[lineIndex++] = pos[j * 3];
+            linePositions[lineIndex++] = pos[j * 3 + 1];
+            linePositions[lineIndex++] = pos[j * 3 + 2];
+            connectedPairs++;
+          }
+        }
+      }
+
+      particles.geometry.attributes.position.needsUpdate = true;
+      connectionLines.geometry.attributes.position.needsUpdate = true;
+      connectionLines.geometry.setDrawRange(0, connectedPairs * 2);
+
+      // Render step
+      renderer.render(scene, camera);
+    }
+
+    animate();
+  </script>
+
+  <!-- Interactive Terminal Mockup Script -->
+  <script>
+    // Typing text for JSON info
+    const devJson = `{
+  "name": "Sajid Ahmad",
+  "fields": ["Artificial Intelligence", "Machine Learning"],
+  "focus": ["Predictive Models", "Deep Learning Architectures"],
+  "platforms": ["React Web", "Native Android"],
+  "tools": ["TensorFlow", "Scikit-Learn", "Kotlin", "Python"],
+  "motto": "Build the future using neural algorithms."
+}`;
+
+    const jsonTarget = document.getElementById('typed-json');
+    let idx = 0;
+
+    function typeJson() {
+      if (idx < devJson.length) {
+        jsonTarget.innerHTML += devJson.charAt(idx);
+        idx++;
+        setTimeout(typeJson, 10);
+      } else {
+        startConsolePrompt();
+      }
+    }
+
+    // Terminal interactive commands simulation
+    const commandTarget = document.getElementById('command-input');
+    const promptInputs = [
+      "python -m build_recommendation_sys",
+      "model.evaluate(test_data)",
+      "echo 'Solving complexity with data...'"
+    ];
+    let promptIdx = 0;
+    
+    function startConsolePrompt() {
+      simulateTypingCommand(promptInputs[promptIdx]);
+    }
+
+    function simulateTypingCommand(cmdStr) {
+      let charIdx = 0;
+      commandTarget.innerHTML = "";
+      
+      function typeChar() {
+        if (charIdx < cmdStr.length) {
+          commandTarget.innerHTML += cmdStr.charAt(charIdx);
+          charIdx++;
+          setTimeout(typeChar, 100);
+        } else {
+          // Press enter, show output, move to next command
+          setTimeout(() => {
+            const outputText = getCommandOutput(cmdStr);
+            const parent = commandTarget.parentElement;
+            
+            // Append static command
+            const cmdLine = document.createElement('div');
+            cmdLine.innerHTML = `<span class="term-prompt">sajid@profile:~$</span> <span class="term-input">${cmdStr}</span>`;
+            parent.insertBefore(cmdLine, commandTarget.parentElement.querySelector('#command-input').parentElement);
+            
+            // Append output
+            const outLine = document.createElement('div');
+            outLine.className = 'term-output';
+            outLine.innerHTML = outputText;
+            parent.insertBefore(outLine, commandTarget.parentElement.querySelector('#command-input').parentElement);
+            
+            commandTarget.innerHTML = "";
+            promptIdx = (promptIdx + 1) % promptInputs.length;
+            
+            setTimeout(() => {
+              simulateTypingCommand(promptInputs[promptIdx]);
+            }, 2500);
+          }, 1200);
+        }
+      }
+      typeChar();
+    }
+
+    function getCommandOutput(cmd) {
+      if (cmd.includes('build_recommendation_sys')) {
+        return "Loading recommendation matrix...<br>[OK] System recommendation engine initialized (Acc: 94.8%)";
+      } else if (cmd.includes('evaluate')) {
+        return "Loss: 0.1142 - Accuracy: 0.9634 - Precision: 0.9588";
+      } else {
+        return "Solving complexity with data...";
+      }
+    }
+
+    // Start typewriter sequence
+    setTimeout(typeJson, 1000);
+  </script>
+</body>
+</html>
