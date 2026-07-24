@@ -90,9 +90,6 @@ Here are the key projects I've built, exploring both client interface elegance a
     <img src="assets/internsathi-card.svg" width="49%" alt="InternSathi">
   </a>
 </p>
-<p align="center">
-  <img src="assets/visionpact-card.svg" width="99%" alt="VisionPact">
-</p>
 
 ---
 
